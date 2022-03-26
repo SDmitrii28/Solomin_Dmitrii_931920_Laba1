@@ -70,7 +70,7 @@ void PersonKeeper::WritePersons(QString path) const
     QTextStream stream(&file); // поток текстовых данных файла
     st.Enum([&](const Person &k) // перебираем значения
     {
-        stream << k.Get_last_name() << '\t' << k.Get_first_name() << '\t' << k.Get_patronymic() << Qt::endl; // записываем ФИО в файл
+        stream << k.Get_last_name() << " " << k.Get_first_name() << " " << k.Get_patronymic() << Qt::endl; // записываем ФИО в файл
     });
     file.close(); // закрываем файл
 }
