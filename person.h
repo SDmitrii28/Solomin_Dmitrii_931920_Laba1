@@ -36,13 +36,16 @@ Person::Person(QString full_name)
 {
     QStringList str = full_name.split(QRegularExpression("\\s+"), Qt::SkipEmptyParts); //Разбивает строку на подстроки
 
-    if (str.size() < 3 || str.size() > 3) // если не правильное количество слов, то сообщаем об ошибке
+    if (str.size() != 2 && str.size() != 3) // если не правильное количество слов, то сообщаем об ошибке
     {
         throw "Error: Person(): String is invalid";
     }
 
     last_name = str[0]; // фамилия
     first_name = str[1]; // имя
-    patronymic = str[2];//отчество
+    if (str.size() == 3)
+    {
+        patronymic = str[2];//отчество
+    }
 }
 #endif // PERSON_H
