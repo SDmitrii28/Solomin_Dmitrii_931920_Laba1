@@ -19,7 +19,6 @@ public:
     static PersonKeeper &Instance(); // хранится единственный экземпляр класса
     void ReadPersons(QString path); //считать ФИО из файла
     void WritePersons(QString path) const; //записать ФИО в файл
-    QStringList ToQStringList() const; //экспорт стэка в список строк
     int Size(); // количество ФИО
     void Clear(); // очистить список ФИО
 
